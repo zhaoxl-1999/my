@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>HTML表格 | 赵晓亮的个人博客</title>
+  <meta name="description" content="表格 table(会使用) 目标：  理解：  能说出表格用来做什么的 表格的基本结构组成   应用：  能够熟练写出n行n列的表格 能简单的合并单元格 ​     表格作用： 存在即是合理的。  表格的现在还是较为常用的一种标签，但不是用来布局，常见显示、展示表格式数据。 因为它可以让数据显示的非常的规整，可读性非常好。 特别是后台展示数据的时候表格运用是否熟练就显得很重要，一个清爽简约的表格">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML表格">
+<meta property="og:url" content="http://yoursite.com/2018/01/26/04-%E8%A1%A8%E6%A0%BC%20table(%E4%BC%9A%E4%BD%BF%E7%94%A8)/index.html">
+<meta property="og:site_name" content="赵晓亮">
+<meta property="og:description" content="表格 table(会使用) 目标：  理解：  能说出表格用来做什么的 表格的基本结构组成   应用：  能够熟练写出n行n列的表格 能简单的合并单元格 ​     表格作用： 存在即是合理的。  表格的现在还是较为常用的一种标签，但不是用来布局，常见显示、展示表格式数据。 因为它可以让数据显示的非常的规整，可读性非常好。 特别是后台展示数据的时候表格运用是否熟练就显得很重要，一个清爽简约的表格">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/ttt.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/table.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/07table%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/tt.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/07table%E8%A1%A8%E6%A0%BC%E5%B1%9E%E6%80%A7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/%E8%A1%A8%E6%A0%BC%E6%95%88%E6%9E%9C01.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/th.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/tht.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/pa.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/he.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/08table%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/thead.png">
+<meta property="article:published_time" content="2018-01-26T08:36:49.000Z">
+<meta property="article:modified_time" content="2018-01-26T09:46:46.000Z">
+<meta property="article:author" content="赵晓亮">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/ttt.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2018/01/26/04-%E8%A1%A8%E6%A0%BC%20table(%E4%BC%9A%E4%BD%BF%E7%94%A8)/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="赵晓亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">赵晓亮</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 河北邯郸</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动端WEB开发之响应式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-06T08:35:52.000Z" itemprop="datePublished">2019-01-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" class="title">移动web开发之rem布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-04T08:35:44.000Z" itemprop="datePublished">2019-01-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/" class="title">移动web开发——flex布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-17T10:42:11.000Z" itemprop="datePublished">2018-10-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/10/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动web开发流式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-10T10:42:11.000Z" itemprop="datePublished">2018-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/02/03/05-%E5%88%97%E8%A1%A8%E5%92%8C%E8%A1%A8%E5%8D%95/" class="title">HTML列表与表单</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-02-03T08:36:49.000Z" itemprop="datePublished">2018-02-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-04-表格 table(会使用)" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML表格
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/01/26/04-%E8%A1%A8%E6%A0%BC%20table(%E4%BC%9A%E4%BD%BF%E7%94%A8)/" class="article-date">
+	  <time datetime="2018-01-26T08:36:49.000Z" itemprop="datePublished">2018-01-26</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+  </span>
+
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/26/04-%E8%A1%A8%E6%A0%BC%20table(%E4%BC%9A%E4%BD%BF%E7%94%A8)/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.7k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 6(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="表格-table会使用"><a class="markdownIt-Anchor" href="#表格-table会使用"></a> 表格 table(会使用)</h1>
+<p>目标：</p>
+<ul>
+<li>理解：
+<ul>
+<li>能说出表格用来做什么的</li>
+<li>表格的基本结构组成</li>
+</ul>
+</li>
+<li>应用：
+<ul>
+<li>能够熟练写出n行n列的表格</li>
+<li>能简单的合并单元格<br />
+​</li>
+</ul>
+</li>
+</ul>
+<img src="/images/html基础/ttt.png"  width="600" />
+<p><strong>表格作用：</strong></p>
+<p>存在即是合理的。  表格的现在还是较为常用的一种标签，但不是用来布局，<strong>常见显示、展示表格式数据。</strong></p>
+<p>因为它可以让数据显示的非常的规整，可读性非常好。</p>
+<p><strong>特别是后台展示数据的时候表格运用是否熟练就显得很重要</strong>，一个清爽简约的表格能够把繁杂的数据表现得很有条理，虽然 div 布局也可以做到，但是总没有表格来得方便。</p>
+<img src="/images/html基础/table.png" />
+<p>ps:  这些地方用表格，你会觉得生活还是那么美好。。。。忍不住想说  PPAP i hava a pen</p>
+<h2 id="1-创建表格"><a class="markdownIt-Anchor" href="#1-创建表格"></a> 1. 创建表格</h2>
+<p>在HTML网页中，要想创建表格，就需要使用表格相关的标签。</p>
+<p><strong>创建表格的基本语法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>单元格内的文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>要深刻体会表格、行、单元格他们的构成。</p>
+<p>在上面的语法中包含基本的三对HTML标签，分别为 table、tr、td，他们是创建表格的基本标签，缺一不可，下面对他们进行具体地解释</p>
+<ol>
+<li>
+<p>table用于定义一个表格标签。</p>
+</li>
+<li>
+<p>tr标签 用于定义表格中的行，必须嵌套在 table标签中。</p>
+</li>
+<li>
+<p>td 用于定义表格中的单元格，必须嵌套在<tr></tr>标签中。</p>
+</li>
+<li>
+<p>字母 td 指表格数据（table data），即数据单元格的内容，现在我们明白，表格最合适的地方就是用来存储数据的。</p>
+<p>​</p>
+</li>
+</ol>
+<img src='/images/html基础/07table基本结构.jpg'>
+<p>**总结： **</p>
+<ul>
+<li>表格的主要目的是用来显示特殊数据的</li>
+<li>一个完整的表格有表格标签（table），行标签（tr），单元格标签（td）组成，没有列的标签</li>
+</ul>
+<ul>
+<li>
+<tr></tr>中只能嵌套<td></td> 类的单元格
+</li>
+<li>
+<td></td>标签，他就像一个容器，可以容纳所有的元素
+</li>
+</ul>
+<h2 id="2-表格属性"><a class="markdownIt-Anchor" href="#2-表格属性"></a> 2. 表格属性</h2>
+<p>表格有部分属性我们不常用，这里重点记住 cellspacing 、 cellpadding。</p>
+<img src="/images/html基础/tt.png" />
+<p>我们经常有个说法，是三参为0，  平时开发的我们这三个参数    border  cellpadding  cellspacing  为  0</p>
+<img src='/images/html基础/07table表格属性.jpg'>
+<p><strong>案例1：</strong></p>
+<img src='/images/html基础/表格效果01.png'>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellpadding</span>=<span class="string">"20"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span>   <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span> <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">td</span>&gt;</span>刘德华<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>55<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">td</span>&gt;</span>郭富城<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>52<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">td</span>&gt;</span>张学友<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>58<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">td</span>&gt;</span>黎明<span class="tag">&lt;/<span class="name">td</span>&gt;</span>   <span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>18<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="tag">&lt;<span class="name">td</span>&gt;</span>刘晓庆<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>女<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>63<span class="tag">&lt;/<span class="name">td</span>&gt;</span>  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-表头单元格标签th"><a class="markdownIt-Anchor" href="#3-表头单元格标签th"></a> 3. 表头单元格标签th</h2>
+<ul>
+<li>作用：
+<ul>
+<li>一般表头单元格位于表格的第一行或第一列，并且文本加粗居中</li>
+</ul>
+</li>
+<li>语法：
+<ul>
+<li>只需用表头标签&lt;th&gt;&lt;/th&gt;替代相应的单元格标签&lt;td&gt;&lt;/td&gt;即可。</li>
+</ul>
+</li>
+</ul>
+ <img src="/images/html基础/th.png" />
+<p><strong>案例2：</strong></p>
+<p>​	效果图</p>
+<img src="/images/html基础/tht.png" />
+<p>​	代码：</p>
+<hr />
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span>  </span><br><span class="line">			<span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span> </span><br><span class="line">			<span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">th</span>&gt;</span>电话<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>小王<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>女<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>110<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>120<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span>	</span><br><span class="line">	<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>th 也是一个单元格   只不过和普通的 td单元格不一样，它会让自己里面的文字居中且加粗</p>
+</blockquote>
+<h2 id="4-表格标题caption"><a class="markdownIt-Anchor" href="#4-表格标题caption"></a> 4. 表格标题caption</h2>
+<p><strong>定义和用法</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">caption</span>&gt;</span>我是表格标题<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>**注意： **</p>
+<ol>
+<li>caption 元素定义<strong>表格标题</strong>，通常这个标题会被居中且显示于表格之上。</li>
+<li>caption 标签必须紧随 table 标签之后。</li>
+<li>这个标签只存在 表格里面才有意义。你是风儿我是沙</li>
+</ol>
+<p><strong>案例3：</strong></p>
+<p>根据要求完成以下案例：</p>
+<img src="/images/html基础/pa.png" />
+<h2 id="5-合并单元格难点"><a class="markdownIt-Anchor" href="#5-合并单元格难点"></a> 5. 合并单元格(难点)</h2>
+<p>合并单元格是我们比较常用的一个操作，但是不会合并的很复杂。</p>
+<img src="/images/html基础/he.jpg" />
+<h3 id="51-合并单元格2种方式"><a class="markdownIt-Anchor" href="#51-合并单元格2种方式"></a> 5.1 合并单元格2种方式</h3>
+<ul>
+<li>跨行合并：rowspan=“合并单元格的个数”</li>
+<li>跨列合并：colspan=“合并单元格的个数”</li>
+</ul>
+<img src='/images/html基础/08table合并单元格.jpg'>
+<h3 id="52-合并单元格顺序"><a class="markdownIt-Anchor" href="#52-合并单元格顺序"></a> 5.2 合并单元格顺序</h3>
+<blockquote>
+<p>**合并的顺序我们按照   先上 后下     先左  后右 的顺序 **</p>
+</blockquote>
+<p>跟我们以前学习汉字的书写顺序完全一致。</p>
+<h3 id="53-合并单元格三步曲"><a class="markdownIt-Anchor" href="#53-合并单元格三步曲"></a> 5.3 合并单元格三步曲</h3>
+<ol>
+<li>先确定是跨行还是跨列合并</li>
+<li>根据 先上 后下   先左  后右的原则找到目标单元格    然后写上 合并方式 还有 要合并的单元格数量  比如 ： <td colspan="3">   </td></li>
+<li>删除多余的单元格 单元格</li>
+</ol>
+<h2 id="6-总结表格"><a class="markdownIt-Anchor" href="#6-总结表格"></a> 6. 总结表格</h2>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th style="text-align:left">定义</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><table></table></td>
+<td style="text-align:left">表格标签</td>
+<td style="text-align:left">就是一个四方的盒子</td>
+</tr>
+<tr>
+<td><tr></tr></td>
+<td style="text-align:left">表格行标签</td>
+<td style="text-align:left">行标签要再table标签内部才有意义</td>
+</tr>
+<tr>
+<td><td></td></td>
+<td style="text-align:left">单元格标签</td>
+<td style="text-align:left">单元格标签是个容器级元素，可以放任何东西</td>
+</tr>
+<tr>
+<td><th></th></td>
+<td style="text-align:left">表头单元格标签</td>
+<td style="text-align:left">它还是一个单元格，但是里面的文字会居中且加粗</td>
+</tr>
+<tr>
+<td><caption></caption></td>
+<td style="text-align:left">表格标题标签</td>
+<td style="text-align:left">表格的标题，跟着表格一起走，和表格居中对齐</td>
+</tr>
+<tr>
+<td>clospan 和 rowspan</td>
+<td style="text-align:left">合并属性</td>
+<td style="text-align:left">用来合并单元格的</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>表格提供了HTML 中定义表格式数据的方法。</li>
+<li>表格中由行中的单元格组成。</li>
+<li>表格中没有列元素，列的个数取决于行的单元格个数。</li>
+<li>表格不要纠结于外观，那是CSS 的作用。</li>
+<li>表格的学习要求：  能手写表格结构，并且能简单合并单元格。</li>
+</ol>
+<h2 id="7-拓展阅读"><a class="markdownIt-Anchor" href="#7-拓展阅读"></a> 7. 拓展阅读@</h2>
+<h3 id="表格划分结构了解"><a class="markdownIt-Anchor" href="#表格划分结构了解"></a> 表格划分结构（了解）</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于比较复杂的表格，表格的结构也就相对的复杂了，所以又将表格分割成三个部分：题头、正文和脚注。而这三部分分别用:thead,tbody,tfoot来标注， 这样更好的分清表格结构</span><br></pre></td></tr></table></figure>
+<img src="/images/html基础/thead.png" />
+<p><strong>注意：</strong></p>
+<ol>
+<li>
+<thead></thead>：用于定义表格的头部。用来放标题之类的东西。<thead> 内部必须拥有 <tr> 标签！
+</li>
+<li>
+<tbody></tbody>：用于定义表格的主体。放数据本体 。
+</li>
+<li>
+<tfoot></tfoot>放表格的脚注之类。
+</li>
+<li>以上标签都是放到table标签中。</li>
+</ol>
+
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/02/03/05-%E5%88%97%E8%A1%A8%E5%92%8C%E8%A1%A8%E5%8D%95/" title="HTML列表与表单"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/01/14/03-HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" title="HTML常用标签"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        &copy; 2020 赵晓亮
+        
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'dhGYlh4Hu11FpAildDrnDiz6-gzGzoHsz',
+    appKey: 'Q6EyPdyVigfkTxBcTs57qniM',
+    placeholder: '说点什么吧',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

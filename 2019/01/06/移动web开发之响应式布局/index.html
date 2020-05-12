@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>移动端WEB开发之响应式布局 | 赵晓亮的个人博客</title>
+  <meta name="description" content="移动端WEB开发之响应式布局  1.0 响应式开发原理  1.1 响应式开发原理 就是使用媒体查询针对不同宽度的设备进行布局和样式的设置，从而适配不同设备的目的。 设备的划分情况：  小于768的为超小屏幕（手机） 768~992之间的为小屏设备（平板） 992~1200的中等屏幕（桌面显示器） 大于1200的宽屏设备（大桌面显示器）   1.2 响应式布局容器 响应式需要一个父级做为布局容器，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端WEB开发之响应式布局">
+<meta property="og:url" content="http://yoursite.com/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="赵晓亮">
+<meta property="og:description" content="移动端WEB开发之响应式布局  1.0 响应式开发原理  1.1 响应式开发原理 就是使用媒体查询针对不同宽度的设备进行布局和样式的设置，从而适配不同设备的目的。 设备的划分情况：  小于768的为超小屏幕（手机） 768~992之间的为小屏设备（平板） 992~1200的中等屏幕（桌面显示器） 大于1200的宽屏设备（大桌面显示器）   1.2 响应式布局容器 响应式需要一个父级做为布局容器，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/1.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/2.jpg">
+<meta property="article:published_time" content="2019-01-06T08:35:52.000Z">
+<meta property="article:modified_time" content="2019-01-10T09:06:26.000Z">
+<meta property="article:author" content="赵晓亮">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="赵晓亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">赵晓亮</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 河北邯郸</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动端WEB开发之响应式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-06T08:35:52.000Z" itemprop="datePublished">2019-01-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" class="title">移动web开发之rem布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-04T08:35:44.000Z" itemprop="datePublished">2019-01-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/" class="title">移动web开发——flex布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-17T10:42:11.000Z" itemprop="datePublished">2018-10-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/10/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动web开发流式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-10T10:42:11.000Z" itemprop="datePublished">2018-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/02/03/05-%E5%88%97%E8%A1%A8%E5%92%8C%E8%A1%A8%E5%8D%95/" class="title">HTML列表与表单</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-02-03T08:36:49.000Z" itemprop="datePublished">2018-02-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-移动web开发之响应式布局" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端WEB开发之响应式布局
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="article-date">
+	  <time datetime="2019-01-06T08:35:52.000Z" itemprop="datePublished">2019-01-06</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+  </span>
+
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.8k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="移动端web开发之响应式布局"><a class="markdownIt-Anchor" href="#移动端web开发之响应式布局"></a> 移动端WEB开发之响应式布局</h1>
+<h3 id="10-响应式开发原理"><a class="markdownIt-Anchor" href="#10-响应式开发原理"></a> 1.0 响应式开发原理</h3>
+<h4 id="11-响应式开发原理"><a class="markdownIt-Anchor" href="#11-响应式开发原理"></a> 1.1 响应式开发原理</h4>
+<p>就是使用媒体查询针对不同宽度的设备进行布局和样式的设置，从而适配不同设备的目的。</p>
+<p>设备的划分情况：</p>
+<ul>
+<li>小于768的为超小屏幕（手机）</li>
+<li>768~992之间的为小屏设备（平板）</li>
+<li>992~1200的中等屏幕（桌面显示器）</li>
+<li>大于1200的宽屏设备（大桌面显示器）</li>
+</ul>
+<h4 id="12-响应式布局容器"><a class="markdownIt-Anchor" href="#12-响应式布局容器"></a> 1.2 响应式布局容器</h4>
+<p>响应式需要一个父级做为布局容器，来配合子级元素来实现变化效果。</p>
+<p>原理就是在不同屏幕下，通过媒体查询来改变这个布局容器的大小，再改变里面子元素的排列方式和大小，从而实现不同屏幕下，看到不同的页面布局和样式变化。</p>
+<p>父容器版心的尺寸划分</p>
+<ul>
+<li>超小屏幕（手机，小于 768px）：设置宽度为 100%</li>
+<li>小屏幕（平板，大于等于 768px）：设置宽度为 750px</li>
+<li>中等屏幕（桌面显示器，大于等于 992px）：宽度设置为 970px</li>
+<li>大屏幕（大桌面显示器，大于等于 1200px）：宽度设置为 1170px</li>
+</ul>
+<p>但是我们也可以根据实际情况自己定义划分</p>
+<h3 id="20-bootstrap的介绍"><a class="markdownIt-Anchor" href="#20-bootstrap的介绍"></a> 2.0 bootstrap的介绍</h3>
+<h4 id="21bootstrap简介"><a class="markdownIt-Anchor" href="#21bootstrap简介"></a> 2.1Bootstrap简介</h4>
+<p>Bootstrap 来自 Twitter（推特），是目前最受欢迎的前端框架。Bootstrap 是基于HTML、CSS 和 JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+<p><a href="lhttp://www.bootcss.com/">中文网</a>  <a href="lhttp://getbootstrap.com/">官网</a>  <a href="http://bootstrap.css88.com/" target="_blank" rel="noopener">推荐网站</a></p>
+<p>框架：顾名思义就是一套架构，它有一套比较完整的网页功能解决方案，而且控制权在框架本身，有预制样式库、组件和插件。使用者要按照框架所规定的某种规范进行开发。</p>
+<h4 id="22-bootstrap优点"><a class="markdownIt-Anchor" href="#22-bootstrap优点"></a> 2.2 bootstrap优点</h4>
+<ul>
+<li>标准化的html+css编码规范</li>
+<li>提供了一套简洁、直观、强悍的组件</li>
+<li>有自己的生态圈，不断的更新迭代</li>
+<li>让开发更简单，提高了开发的效率</li>
+</ul>
+<h4 id="23-版本简介"><a class="markdownIt-Anchor" href="#23-版本简介"></a> 2.3 版本简介</h4>
+<p>2.x.x：停止维护,兼容性好,代码不够简洁，功能不够完善。</p>
+<p>3.x.x：目前使用最多,稳定,但是放弃了IE6-IE7。对 IE8 支持但是界面效果不好,偏向用于开发响应式布局、移动设备优先的WEB 项目。</p>
+<p>4.x.x：最新版，目前还不是很流行</p>
+<h4 id="24bootstrap基本使用"><a class="markdownIt-Anchor" href="#24bootstrap基本使用"></a> 2.4bootstrap基本使用</h4>
+<p>在现阶段我们还没有接触JS相关课程，所以我们只考虑使用它的样式库。</p>
+<p>Bootstrap 使用四步曲：</p>
+<ol>
+<li>
+<p>创建文件夹结构</p>
+<p><img src="/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/1.png" alt="" /></p>
+<p>​</p>
+</li>
+<li>
+<p>创建 html 骨架结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;zh-CN&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap 101 Template&lt;&#x2F;title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href&#x3D;&quot;css&#x2F;bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span><br><span class="line">    &lt;!-- WARNING: Respond.js doesn&#39;t work if you view the page via file:&#x2F;&#x2F; --&gt;</span><br><span class="line">    &lt;!--[if lt IE 9]&gt;</span><br><span class="line">      &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;html5shiv&#x2F;3.7.2&#x2F;html5shiv.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">      &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;respond.js&#x2F;1.4.2&#x2F;respond.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;![endif]--&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;你好，世界！&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;jquery&#x2F;1.11.3&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;bootstrap.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li>
+<p>引入相关样式文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Bootstrap 核心样式--&gt;</span><br><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;bootstrap&#x2F;css&#x2F;bootstrap.min.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li>
+<p>书写内容</p>
+<p>直接拿Bootstrap 预先定义好的样式来使用</p>
+<p>修改Bootstrap 原来的样式，注意权重问题</p>
+<p>学好Bootstrap 的关键在于知道它定义了哪些样式，以及这些样式能实现什么样的效果</p>
+</li>
+</ol>
+<h4 id="25-bootstrap布局容器"><a class="markdownIt-Anchor" href="#25-bootstrap布局容器"></a> 2.5 bootstrap布局容器</h4>
+<p>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 或者.container-fluid 容器，它提供了两个作此用处的类。</p>
+<p>.container</p>
+<ul>
+<li>响应式布局的容器  固定宽度</li>
+<li>大屏 ( &gt;=1200px)  宽度定为 1170px</li>
+<li>中屏 ( &gt;=992px)   宽度定为  970px</li>
+<li>小屏 ( &gt;=768px)   宽度定为  750px</li>
+<li>超小屏  (100%)</li>
+</ul>
+<p>.container-fluid</p>
+<ul>
+<li>流式布局容器 百分百宽度</li>
+<li>占据全部视口（viewport）的容器。</li>
+</ul>
+<h4 id="26-bootstrap栅格系统"><a class="markdownIt-Anchor" href="#26-bootstrap栅格系统"></a> 2.6 bootstrap栅格系统</h4>
+<p>Bootstrap提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。</p>
+<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</p>
+<ul>
+<li>按照不同屏幕划分为1~12 等份</li>
+<li>行（row） 可以去除父容器作用15px的边距</li>
+<li>xs-extra small：超小； sm-small：小；  md-medium：中等； lg-large：大；</li>
+<li>列（column）大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列</li>
+<li>每一列默认有左右15像素的 padding</li>
+<li>可以同时为一列指定多个设备的类名，以便划分不同份数  例如 class=“col-md-4 col-sm-6”</li>
+</ul>
+<p>栅格嵌套</p>
+<p>栅格系统内置的栅格系统将内容再次嵌套。简单理解就是一个列内再分成若干份小列。我们可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-*<br />
+元素内。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列嵌套 --&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;小列&lt;&#x2F;div&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;小列&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>列偏移</p>
+<p>使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列偏移 --&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;1&lt;&#x2F;div&gt;</span><br><span class="line">     &lt;div class&#x3D;&quot;col-lg-4 col-lg-offset-4&quot;&gt;2&lt;&#x2F;div&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>列排序</p>
+<p>通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列排序 --&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class&#x3D;&quot;col-lg-4 col-lg-push-8&quot;&gt;左侧&lt;&#x2F;div&gt;</span><br><span class="line">     &lt;div class&#x3D;&quot;col-lg-8 col-lg-pull-4&quot;&gt;右侧&lt;&#x2F;div&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>响应式工具</p>
+<p>为了加快对移动设备友好的页面开发工作，利用媒体查询功能，并使用这些工具类可以方便的针对不同设备展示或隐藏页面内容。</p>
+<p><img src="/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/2.jpg" alt="" /></p>
+
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" title="移动web开发之rem布局"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        &copy; 2020 赵晓亮
+        
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'dhGYlh4Hu11FpAildDrnDiz6-gzGzoHsz',
+    appKey: 'Q6EyPdyVigfkTxBcTs57qniM',
+    placeholder: '说点什么吧',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>认识WEB | 赵晓亮的个人博客</title>
+  <meta name="description" content="认识WEB  1. 认识网页 1网页主要由文字、图像和超链接等元素构成。当然，除了这些元素，网页中还可以包含音频、视频以及Flash等。  思考： 网页是如何形成的呢?   总结 网页有图片、链接、文字等元素组成，我们后面的任务就是要把这部分网页元素用代码写出来。。。  2. 浏览器（显示代码） 平时我们浏览网页，是在浏览器地址栏中输入网页地址，就可以访问我们的页面了。你的浏览器呢？  1浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="认识WEB">
+<meta property="og:url" content="http://yoursite.com/2018/01/08/01-%E5%89%8D%E8%A8%80&WEB%E6%A0%87%E5%87%86/index.html">
+<meta property="og:site_name" content="赵晓亮">
+<meta property="og:description" content="认识WEB  1. 认识网页 1网页主要由文字、图像和超链接等元素构成。当然，除了这些元素，网页中还可以包含音频、视频以及Flash等。  思考： 网页是如何形成的呢?   总结 网页有图片、链接、文字等元素组成，我们后面的任务就是要把这部分网页元素用代码写出来。。。  2. 浏览器（显示代码） 平时我们浏览网页，是在浏览器地址栏中输入网页地址，就可以访问我们的页面了。你的浏览器呢？  1浏览器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/mi.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/web.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/add.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/b.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/liulan.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/count.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/bz.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/gx.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/hb1.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/htmll.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/hb2.png">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/css.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/hb3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/search.gif">
+<meta property="article:published_time" content="2018-01-08T08:36:49.000Z">
+<meta property="article:modified_time" content="2018-01-08T09:11:36.000Z">
+<meta property="article:author" content="赵晓亮">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/html%E5%9F%BA%E7%A1%80/mi.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2018/01/08/01-%E5%89%8D%E8%A8%80&WEB%E6%A0%87%E5%87%86/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="赵晓亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">赵晓亮</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 河北邯郸</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动端WEB开发之响应式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-06T08:35:52.000Z" itemprop="datePublished">2019-01-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" class="title">移动web开发之rem布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-04T08:35:44.000Z" itemprop="datePublished">2019-01-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/" class="title">移动web开发——flex布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-17T10:42:11.000Z" itemprop="datePublished">2018-10-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/10/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动web开发流式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-10T10:42:11.000Z" itemprop="datePublished">2018-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/02/03/05-%E5%88%97%E8%A1%A8%E5%92%8C%E8%A1%A8%E5%8D%95/" class="title">HTML列表与表单</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-02-03T08:36:49.000Z" itemprop="datePublished">2018-02-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-01-前言&amp;WEB标准" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      认识WEB
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/01/08/01-%E5%89%8D%E8%A8%80&WEB%E6%A0%87%E5%87%86/" class="article-date">
+	  <time datetime="2018-01-08T08:36:49.000Z" itemprop="datePublished">2018-01-08</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+  </span>
+
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/08/01-%E5%89%8D%E8%A8%80&WEB%E6%A0%87%E5%87%86/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.5k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="认识web"><a class="markdownIt-Anchor" href="#认识web"></a> 认识WEB</h1>
+<h2 id="1-认识网页"><a class="markdownIt-Anchor" href="#1-认识网页"></a> 1. 认识网页</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网页主要由文字、图像和超链接等元素构成。当然，除了这些元素，网页中还可以包含音频、视频以及Flash等。</span><br></pre></td></tr></table></figure>
+<img src="/images/html基础/mi.png" alt=""/>
+<p><strong>思考：</strong></p>
+<p>网页是如何形成的呢?</p>
+<img src="/images/html基础/web.png" />
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>网页有图片、链接、文字等元素组成，我们后面的任务就是要把这部分网页元素用代码写出来。。。</p>
+<h2 id="2-浏览器显示代码"><a class="markdownIt-Anchor" href="#2-浏览器显示代码"></a> 2. 浏览器（显示代码）</h2>
+<p>平时我们浏览网页，是在浏览器地址栏中输入网页地址，就可以访问我们的页面了。你的浏览器呢？</p>
+<img src="/images/html基础/add.png" >
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">浏览器是网页显示、运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。</span><br></pre></td></tr></table></figure>
+<img src="/images/html基础/b.png" />
+<p>可能你最熟悉的是 IE浏览器，但是。。。</p>
+<img src="/images/html基础/liulan.jpg" >
+<h3 id="21-查看浏览器占有的市场份额"><a class="markdownIt-Anchor" href="#21-查看浏览器占有的市场份额"></a> 2.1 查看浏览器占有的市场份额</h3>
+<p>查看网站： <a href="http://tongji.baidu.com/data/browser" target="_blank">http://tongji.baidu.com/data/browser</a></p>
+<img src="/images/html基础/count.png" />
+<p>2008年，大名鼎鼎的互联网巨头Google公司发布了它的首款浏览器Chrome浏览器。</p>
+<p>跟王思聪一样，没办法，生下来人家就是富二代官二代啊，后台太强，而且确实先天能力得天独厚。</p>
+<h3 id="22-常见浏览器内核了解"><a class="markdownIt-Anchor" href="#22-常见浏览器内核了解"></a> 2.2 常见浏览器内核（了解）</h3>
+<p>首先解释一下浏览器内核是什么东西。英文叫做：Rendering Engine，中文翻译很多，排版引擎、解释引擎、渲染引擎，现在流行称为浏览器内核.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">负责读取网页内容，整理讯息，计算网页的显示方式并显示页面.</span><br></pre></td></tr></table></figure>
+<p>因为浏览器太多啦， 但是现在主要流行的就是下面几个：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">浏览器</th>
+<th style="text-align:center">内核</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">IE</td>
+<td style="text-align:center">Trident</td>
+<td style="text-align:left">IE、猎豹安全、360极速浏览器、百度浏览器</td>
+</tr>
+<tr>
+<td style="text-align:left">firefox</td>
+<td style="text-align:center">Gecko</td>
+<td style="text-align:left">可惜这几年已经没落了，打开速度慢、升级频繁、猪一样的队友flash、神一样的对手chrome。</td>
+</tr>
+<tr>
+<td style="text-align:left">Safari</td>
+<td style="text-align:center">webkit</td>
+<td style="text-align:left">现在很多人错误地把 webkit 叫做 chrome内核（即使 chrome内核已经是 blink 了）。苹果感觉像被别人抢了媳妇，都哭晕再厕所里面了。</td>
+</tr>
+<tr>
+<td style="text-align:left">chrome</td>
+<td style="text-align:center">Chromium/Blink</td>
+<td style="text-align:left">在 Chromium 项目中研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。Blink 其实是 WebKit 的分支。大部分国产浏览器最新版都采用Blink内核。二次开发</td>
+</tr>
+<tr>
+<td style="text-align:left">Opera</td>
+<td style="text-align:center">Presto</td>
+<td style="text-align:left">Presto（已经废弃） 是挪威产浏览器 opera 的 “前任” 内核，为何说是 “前任”，因为最新的 opera 浏览器早已将之抛弃从而投入到了谷歌怀抱了。  现在用blink内核。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>拓展阅读：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">移动端的浏览器内核主要说的是系统内置浏览器的内核。</span><br><span class="line"></span><br><span class="line">Android手机而言，使用率最高的就是Webkit内核，大部分国产浏览器宣称的自己的内核，基本上也是属于webkit二次开发。</span><br><span class="line"></span><br><span class="line">iOS以及WP7平台上，由于系统原因，系统大部分自带浏览器内核，一般是Safari或者IE内核Trident的</span><br></pre></td></tr></table></figure>
+<h2 id="3-web标准重点"><a class="markdownIt-Anchor" href="#3-web标准重点"></a> 3. Web标准（重点）</h2>
+<p>目标</p>
+<ul>
+<li>记忆
+<ul>
+<li>能说出网页 中 web 标准三层组成</li>
+</ul>
+</li>
+<li>理解
+<ul>
+<li>能结合人来表述web标准三层</li>
+</ul>
+</li>
+</ul>
+<p>Web标准不是某一个标准，而是由W3C组织和其他标准化组织制定的一系列标准的集合。</p>
+<p>W3C 万维网联盟是国际最著名的标准化组织。1994年成立后，至今已发布近百项相关万维网的标准，对万维网发展做出了杰出的贡献。</p>
+<p><strong>w3c就类似于现实世界中的联合国。</strong></p>
+<h3 id="31-为什么要遵循web标准呢"><a class="markdownIt-Anchor" href="#31-为什么要遵循web标准呢"></a> 3.1 为什么要遵循WEB标准呢？</h3>
+<p>通过以上浏览器的内核不同，我们知道他们渲染或者排版的模式就有些许差异，显示就会有差别。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">问：  哪个方言再全国基本都可以听得懂？</span><br></pre></td></tr></table></figure>
+<img src="/images/html基础/bz.png" />
+<h3 id="32-web-标准的好处"><a class="markdownIt-Anchor" href="#32-web-标准的好处"></a> 3.2 Web 标准的好处</h3>
+<p><em>1</em>、让Web的发展前景更广阔<br />
+<em>2</em>、内容能被更广泛的设备访问<br />
+<em>3</em>、更容易被搜寻引擎搜索<br />
+<em>4</em>、降低网站流量费用<br />
+<em>5</em>、使网站更易于维护<br />
+<em>6</em>、提高页面浏览速度</p>
+<p>专业的人做专业的事。  来呀<sub>快活呀</sub>反正有大把时间~</p>
+<h3 id="33-web-标准构成"><a class="markdownIt-Anchor" href="#33-web-标准构成"></a> 3.3 Web 标准构成</h3>
+<p><strong>构成：</strong> 主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。</p>
+<ul>
+<li>
+<p>结构标准：结构用于对网页元素进行整理和分类，咱们主要学的是HTML。 对于网页来说最重要的一部分</p>
+</li>
+<li>
+<p>表现标准：表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS</p>
+</li>
+<li>
+<p>行为标准：行为是指网页模型的定义及交互的编写，咱们主要学的是 Javascript</p>
+</li>
+</ul>
+<p>理想状态我们的源码： .HTML      .css      .js</p>
+<p>直观感受：</p>
+<img src="/images/html基础/gx.png" />
+<p>总结WEB标准：</p>
+<p>结构标准：   <img src="/images/html基础/hb1.png" width="300" />  决定你是否有个好天然身体</p>
+<p><strong>结构层：通过对语义的分析，可以对其划分结构。具有了结构的内容，将更容易阅读</strong></p>
+ <img src='/images/html基础/htmll.jpg' />
+<p>表现标准：   <img src="/images/html基础/hb2.png" width="300" />  决定你是否打扮的美丽外观</p>
+<p><strong>表现层：是为了让网页就能展现出灵活多样的显示效果</strong></p>
+ <img src='/images/html基础/css.jpg' />
+<p>行为标准：   <img src="/images/html基础/hb3.jpg"  width="420"   />  决定你是否有吸引人的行为</p>
+<p><strong>行为层：用户对网页进行操作，网页可以做出响应性的变化。</strong></p>
+  <img src='/images/html基础/search.gif' />
+<h3 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h3>
+<ul>
+<li>web标准有三层结构，分别是结构（html）、表现（css）和行为（javascript）</li>
+<li>结构类似人的身体， 表现类似人的着装， 行为类似人的行为动作</li>
+<li>理想状态下，他们三层都是独立的， 放到不同的文件里面</li>
+</ul>
+<h2 id="4-拓展"><a class="markdownIt-Anchor" href="#4-拓展"></a> 4. 拓展@</h2>
+<ul>
+<li>
+<p><strong>介绍一下你对浏览器内核的理解？常见的浏览器内核有哪些？</strong></p>
+<p>浏览器内核包括两部分，渲染引擎和js引擎。渲染引擎负责读取网页内容，整理讯息，计算网页的显示方式并显示页面，js引擎是解析执行js获取网页的动态效果。 后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。<br />
+IE：Trident<br />
+firefox：Gecko<br />
+chrom、safari：webkit<br />
+Opera：Presto<br />
+Microsoft Edge：EdgeHTML</p>
+<p>深度阅读：<a href="http://blog.csdn.net/summer_15/article/details/71249203" target="_blank" rel="noopener">五大主流浏览器内核的源起以及国内各大浏览器内核总结</a></p>
+</li>
+</ul>
+
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/01/11/02-%E8%AE%A4%E8%AF%86HTML/" title="HTML初识"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        &copy; 2020 赵晓亮
+        
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'dhGYlh4Hu11FpAildDrnDiz6-gzGzoHsz',
+    appKey: 'Q6EyPdyVigfkTxBcTs57qniM',
+    placeholder: '说点什么吧',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

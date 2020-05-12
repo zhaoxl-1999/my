@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>移动web开发——flex布局 | 赵晓亮的个人博客</title>
+  <meta name="description" content="移动web开发——flex布局  1.0传统布局和flex布局对比  1.1传统布局  兼容性好 布局繁琐 局限性，不能再移动端很好的布局   1.2 flex布局  操作方便，布局极其简单，移动端使用比较广泛 pc端浏览器支持情况比较差 IE11或更低版本不支持flex或仅支持部分   1.3 建议  如果是pc端页面布局，还是采用传统方式 如果是移动端或者是不考虑兼容的pc则采用flex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动web开发——flex布局">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="赵晓亮">
+<meta property="og:description" content="移动web开发——flex布局  1.0传统布局和flex布局对比  1.1传统布局  兼容性好 布局繁琐 局限性，不能再移动端很好的布局   1.2 flex布局  操作方便，布局极其简单，移动端使用比较广泛 pc端浏览器支持情况比较差 IE11或更低版本不支持flex或仅支持部分   1.3 建议  如果是pc端页面布局，还是采用传统方式 如果是移动端或者是不考虑兼容的pc则采用flex">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/4.jpg">
+<meta property="article:published_time" content="2018-10-17T10:42:11.000Z">
+<meta property="article:modified_time" content="2018-10-18T09:10:37.000Z">
+<meta property="article:author" content="赵晓亮">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/1.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="赵晓亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">赵晓亮</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 河北邯郸</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/06/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动端WEB开发之响应式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-06T08:35:52.000Z" itemprop="datePublished">2019-01-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" class="title">移动web开发之rem布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-01-04T08:35:44.000Z" itemprop="datePublished">2019-01-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/" class="title">移动web开发——flex布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-17T10:42:11.000Z" itemprop="datePublished">2018-10-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/10/10/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80/" class="title">移动web开发流式布局</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-10-10T10:42:11.000Z" itemprop="datePublished">2018-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/html%E5%9F%BA%E7%A1%80/">html基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/02/03/05-%E5%88%97%E8%A1%A8%E5%92%8C%E8%A1%A8%E5%8D%95/" class="title">HTML列表与表单</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-02-03T08:36:49.000Z" itemprop="datePublished">2018-02-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-移动web开发_flex布局" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动web开发——flex布局
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/" class="article-date">
+	  <time datetime="2018-10-17T10:42:11.000Z" itemprop="datePublished">2018-10-17</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80/">web前端布局</a>
+  </span>
+
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/10/17/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_flex%E5%B8%83%E5%B1%80/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.1k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="移动web开发flex布局"><a class="markdownIt-Anchor" href="#移动web开发flex布局"></a> 移动web开发——flex布局</h1>
+<h2 id="10传统布局和flex布局对比"><a class="markdownIt-Anchor" href="#10传统布局和flex布局对比"></a> 1.0传统布局和flex布局对比</h2>
+<h3 id="11传统布局"><a class="markdownIt-Anchor" href="#11传统布局"></a> 1.1传统布局</h3>
+<ul>
+<li>兼容性好</li>
+<li>布局繁琐</li>
+<li>局限性，不能再移动端很好的布局</li>
+</ul>
+<h3 id="12-flex布局"><a class="markdownIt-Anchor" href="#12-flex布局"></a> 1.2 flex布局</h3>
+<ul>
+<li>操作方便，布局极其简单，移动端使用比较广泛</li>
+<li>pc端浏览器支持情况比较差</li>
+<li>IE11或更低版本不支持flex或仅支持部分</li>
+</ul>
+<h3 id="13-建议"><a class="markdownIt-Anchor" href="#13-建议"></a> 1.3 建议</h3>
+<ul>
+<li>如果是pc端页面布局，还是采用传统方式</li>
+<li>如果是移动端或者是不考虑兼容的pc则采用flex</li>
+</ul>
+<h2 id="20-flex布局原理"><a class="markdownIt-Anchor" href="#20-flex布局原理"></a> 2.0 flex布局原理</h2>
+<ul>
+<li>flex 是 flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。</li>
+<li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。</li>
+<li>flex布局又叫伸缩布局 、弹性布局 、伸缩盒布局 、弹性盒布局</li>
+<li>采用 Flex 布局的元素，称为 Flex 容器（flex</li>
+</ul>
+<p>container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为 Flex 项目（flex<br />
+item），简称&quot;项目&quot;。</p>
+<p><strong>总结</strong>：就是通过给父盒子添加flex属性，来控制子盒子的位置和排列方式</p>
+<h2 id="30-父项常见属性"><a class="markdownIt-Anchor" href="#30-父项常见属性"></a> 3.0 父项常见属性</h2>
+<ul>
+<li>flex-direction：设置主轴的方向</li>
+<li>justify-content：设置主轴上的子元素排列方式</li>
+<li>flex-wrap：设置子元素是否换行</li>
+<li>align-content：设置侧轴上的子元素的排列方式（多行）</li>
+<li>align-items：设置侧轴上的子元素排列方式（单行）</li>
+<li>flex-flow：复合属性，相当于同时设置了 flex-direction 和 flex-wrap</li>
+</ul>
+<h3 id="31-flex-direction设置主轴的方向"><a class="markdownIt-Anchor" href="#31-flex-direction设置主轴的方向"></a> 3.1 flex-direction设置主轴的方向</h3>
+<ul>
+<li>在 flex 布局中，是分为主轴和侧轴两个方向，同样的叫法有 ： 行和列、x 轴和y 轴</li>
+<li>默认主轴方向就是 x 轴方向，水平向右</li>
+<li>默认侧轴方向就是 y 轴方向，水平向下</li>
+</ul>
+<img src="/images/移动web开发_flex布局/1.jpg">
+<ul>
+<li>
+<p>注意： 主轴和侧轴是会变化的，就看 flex-direction 设置谁为主轴，剩下的就是侧轴。而我们的子元素是跟着主轴来排列的</p>
+<img src="/images/移动web开发_flex布局/2.jpg">
+<p>​</p>
+</li>
+</ul>
+<h3 id="32-justify-content-设置主轴上的子元素排列方式"><a class="markdownIt-Anchor" href="#32-justify-content-设置主轴上的子元素排列方式"></a> 3.2 justify-content 设置主轴上的子元素排列方式</h3>
+<img src="/images/移动web开发_flex布局/3.jpg">
+<h3 id="33-flex-wrap设置是否换行"><a class="markdownIt-Anchor" href="#33-flex-wrap设置是否换行"></a> 3.3 flex-wrap设置是否换行</h3>
+<ul>
+<li>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，flex布局中默认是不换行的。</li>
+<li>nowrap 不换行</li>
+<li>wrap 换行</li>
+</ul>
+<h3 id="34-align-items-设置侧轴上的子元素排列方式单行"><a class="markdownIt-Anchor" href="#34-align-items-设置侧轴上的子元素排列方式单行"></a> 3.4 align-items 设置侧轴上的子元素排列方式（单行 ）</h3>
+<ul>
+<li>该属性是控制子项在侧轴（默认是y轴）上的排列方式  在子项为单项（单行）的时候使用</li>
+<li>flex-start 从头部开始</li>
+<li>flex-end 从尾部开始</li>
+<li>center 居中显示</li>
+<li>stretch 拉伸</li>
+</ul>
+<h3 id="35-align-content-设置侧轴上的子元素的排列方式多行"><a class="markdownIt-Anchor" href="#35-align-content-设置侧轴上的子元素的排列方式多行"></a> 3.5 align-content  设置侧轴上的子元素的排列方式（多行）</h3>
+<p>设置子项在侧轴上的排列方式 并且只能用于子项出现 换行 的情况（多行），在单行下是没有效果的。</p>
+<img src="/images/移动web开发_flex布局/4.jpg">
+<h3 id="36-align-content-和align-items区别"><a class="markdownIt-Anchor" href="#36-align-content-和align-items区别"></a> 3.6 align-content 和align-items区别</h3>
+<ul>
+<li>align-items  适用于单行情况下， 只有上对齐、下对齐、居中和 拉伸</li>
+<li>align-content适应于换行（多行）的情况下（单行情况下无效）， 可以设置 上对齐、下对齐、居中、拉伸以及平均分配剩余空间等属性值。</li>
+<li>总结就是单行找align-items  多行找 align-content</li>
+</ul>
+<h3 id="37-flex-flow-属性是-flex-direction-和-flex-wrap-属性的复合属性"><a class="markdownIt-Anchor" href="#37-flex-flow-属性是-flex-direction-和-flex-wrap-属性的复合属性"></a> 3.7 flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-flow:row wrap;</span><br></pre></td></tr></table></figure>
+<h2 id="40-flex布局子项常见属性"><a class="markdownIt-Anchor" href="#40-flex布局子项常见属性"></a> 4.0 flex布局子项常见属性</h2>
+<ul>
+<li>flex子项目占的份数</li>
+<li>align-self控制子项自己在侧轴的排列方式</li>
+<li>order属性定义子项的排列顺序（前后顺序）</li>
+</ul>
+<h3 id="41-flex-属性"><a class="markdownIt-Anchor" href="#41-flex-属性"></a> 4.1  flex 属性</h3>
+<p>flex 属性定义子项目分配剩余空间，用flex来表示占多少份数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;</span><br><span class="line">    flex: &lt;number&gt;; &#x2F;* 默认值 0 *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="42-align-self控制子项自己在侧轴上的排列方式"><a class="markdownIt-Anchor" href="#42-align-self控制子项自己在侧轴上的排列方式"></a> 4.2 align-self控制子项自己在侧轴上的排列方式</h3>
+<p>align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。</p>
+<p>默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">span:nth-child(2) &#123;</span><br><span class="line">      &#x2F;* 设置自己在侧轴上的排列方式 *&#x2F;</span><br><span class="line">      align-self: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="43-order-属性定义项目的排列顺序"><a class="markdownIt-Anchor" href="#43-order-属性定义项目的排列顺序"></a> 4.3 order 属性定义项目的排列顺序</h3>
+<p>数值越小，排列越靠前，默认为0。</p>
+<p>注意：和 z-index 不一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;</span><br><span class="line">    order: &lt;number&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/01/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_rem%E5%B8%83%E5%B1%80/" title="移动web开发之rem布局"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/10/10/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91_%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80/" title="移动web开发流式布局"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        &copy; 2020 赵晓亮
+        
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'dhGYlh4Hu11FpAildDrnDiz6-gzGzoHsz',
+    appKey: 'Q6EyPdyVigfkTxBcTs57qniM',
+    placeholder: '说点什么吧',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
